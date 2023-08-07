@@ -1,0 +1,70 @@
+@use "../base" as *;
+@use "../utility" as *;
+
+.sidebar-wrapper{
+    max-width: 256px;
+    min-width: 224px;
+    width: 15%;
+    padding-top: 56px;
+
+    h3{
+        color: $grey;
+    }
+
+    p{
+        color: $grey-lighten-1
+    }
+
+    .list-item{
+        display: flex;
+        padding: 16px 24px;
+        align-items: center;
+        gap: 8px;
+
+        @extend .text-button;
+    }
+
+    .nav-list{
+        @extend .text-button;
+        background: $grey-lighten-5;
+        color: $grey-darken-1;
+
+        &.selected{
+            background: $teal-darken-4;
+            color: $white;
+        }
+
+        &:not(&.selected, &.coming-soon):hover{
+            background: $teal-lighten-5;
+        }
+    }
+
+    .coming-soon{
+        background: transparent;
+        color: $grey-lighten-2;
+        pointer-events: none;
+        user-select: none;
+
+        .label{
+            @extend .text-caption;
+            display: inline-block;
+            padding: 4px 8px;
+            background: $grey-lighten-3;
+            color: $grey-lighten-1;
+            border-radius: 16px;
+        }
+    }
+
+    .log-out{
+        background: $grey-lighten-5;
+        color: $red;
+        
+        &:hover{
+            background: $grey-lighten-4;
+        }
+        
+        &:active{
+            background: $grey-lighten-3;
+        }
+    }
+}

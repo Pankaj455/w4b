@@ -1,0 +1,35 @@
+@use "../base" as *;
+@use "../utility/" as *;
+
+.search-section{
+    max-width: 852px;
+    min-width: 620px;
+    width: 50%;
+    overflow: hidden;
+    gap: 12px;
+    
+    .search-wrapper{
+        border-radius: 8px;
+        background: $grey-lighten-5;
+        
+        input{
+            @extend .text-button;
+            background: transparent;
+            width: 100%;
+            
+            &,
+            &::placeholder{
+                color: $teal-darken-4;
+            }
+        }
+
+        .search-icon{
+            background: transparent;
+            
+            i{
+                color: $teal-darken-4;
+            }
+        }
+    }
+
+}

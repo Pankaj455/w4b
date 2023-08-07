@@ -1,0 +1,89 @@
+@use "../base" as *;
+@use "../utility/" as *;
+
+$border-radius: 8px;
+
+%btn-flat-base{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    gap: 8px;
+    border-radius: $border-radius;
+
+    span{
+        @extend .text-button;
+    }
+
+    i{
+        font-size: 24px;
+    }
+}
+
+.btn-flat-primary{
+    @extend %btn-flat-base;
+    background: $teal-darken-4;
+
+    &:hover{
+        background: $teal-darken-2;
+    }
+
+    &:active{
+        background: $teal-lighten-1;
+    }
+
+    &:disabled,
+    &.disabled
+    {
+        background: $grey-lighten-1;
+        pointer-events: none;
+        user-select: none;
+        i,span{
+            color: $grey-darken-1;
+        }
+    }
+
+    i,span{
+        color: $white;
+    }
+}
+
+.btn-flat-secondary{
+    @extend %btn-flat-base;
+    background: $grey-lighten-3;
+
+    &:hover{
+        background: $grey-lighten-2;
+    }
+
+    &:active{
+        background: $grey-lighten-3;
+    }
+
+    &:disabled{
+        background: $grey-lighten-1;
+    }
+
+    i,span{
+        color: $red;
+    }
+}
+
+.button-icon{
+    @extend %flex-center;
+    padding: 12px;
+    background: $grey-lighten-5;
+    border-radius: $border-radius;
+
+    i{
+        color: $teal-darken-4;
+    }
+
+    &:hover,
+    &:focus{
+        background: $teal-lighten-3;
+    }
+    &:active{
+        background: $teal-lighten-1;
+    }
+}

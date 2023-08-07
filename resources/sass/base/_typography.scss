@@ -1,0 +1,41 @@
+$inter: 'Inter', sans-serif;
+$urbanist: 'Urbanist', sans-serif;
+
+$fw-600: 600;
+$fw-400: 400;
+
+body {
+    font-family: $urbanist;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+button {
+    font-family: $urbanist;
+    font-weight: $fw-600;
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 0;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 0;
+}
+
+i{
+    font-size: 24px;
+}

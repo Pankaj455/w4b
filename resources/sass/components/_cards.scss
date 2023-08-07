@@ -1,0 +1,56 @@
+@use "../base" as *;
+@use "../utility" as *;
+
+$top-border-smooth: 8px 8px 0 0;
+
+.analytics-card{
+    max-width: 272px;
+    display: flex;
+    flex-direction: column;
+    width: 272px;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px;
+    background: $white;
+    border: 1px solid transparent;
+    border-radius: $top-border-smooth;
+    cursor: pointer;
+
+    &:hover{
+        border-bottom: 1px solid $teal;
+        box-shadow: 0px 5px 20px 0px #00968840;
+    }
+
+    &:active{
+        border: 1px solid $teal-lighten-1;
+        background: $teal-lighten-5;
+    }
+
+    .text-caption{
+        color: $grey-darken-2;
+    }
+
+    h1{
+        color: $grey-darken-3;
+    }
+
+    i{
+        font-size: 32px;
+
+        &.ph-arrow-up{
+            color: $green;
+        }
+
+        &.ph-arrow-down{
+            color: $red;
+        }
+    }
+
+    .text-body-1{
+        color: $green-2;
+
+        span{
+            color: $grey-darken-1;
+        }
+    }
+}

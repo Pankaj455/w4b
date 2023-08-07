@@ -1,0 +1,164 @@
+@use "../base" as *;
+
+.gap-32{
+    gap: 32px;
+}
+
+.p-32{
+    padding: 32px;
+}
+
+.text-subtitle-1 {
+    font-family: $urbanist;
+    font-size: 20px;
+    font-weight: $fw-600;
+    line-height: 28px;
+}
+
+.text-subtitle-2 {
+    font-family: $urbanist;
+    font-size: 18px;
+    font-weight: $fw-600;
+    line-height: 24px;
+}
+
+.text-body-1 {
+    font-family: $inter;
+    font-size: 16px;
+    font-weight: $fw-400;
+    line-height: 24px;
+}
+
+.text-body-2 {
+    font-family: $inter;
+    font-size: 14px;
+    font-weight: $fw-400;
+    line-height: 18px;
+}
+
+.text-caption {
+    font-family: $inter;
+    font-size: 12px;
+    font-weight: $fw-400;
+    line-height: 16px;
+}
+
+.text-button{
+    font-family: $urbanist;
+    font-size: 16px;
+    font-weight: $fw-600;
+    line-height: 24px;
+}
+
+%flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main{
+    background: $grey-lighten-3;
+    padding: 48px 40px;
+    position: relative;
+    overflow-y: auto;
+
+    h1{
+        color: $grey-darken-3;
+    }
+
+    .nav-tabs{
+        border: 0;
+        margin-bottom: 32px;
+
+        .nav-link{
+            @extend .text-subtitle-1;
+            color: $grey-lighten-1;
+            padding: 8px 0;
+            border: 0;
+        }
+
+        .nav-item.show .nav-link,
+        .nav-link.active{
+            color: $grey-darken-2;
+            background: transparent;
+            border-bottom: 2px solid $teal;
+        }
+
+    }
+
+    .offcanvas{
+        padding: 64px 16px;
+        max-width: 872px;
+        min-width: 610px;
+        width: 43vw;
+        box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.10);
+
+        & > *{
+            padding: 0;
+        }
+
+        .offcanvas-header{
+            margin-bottom: 32px;
+
+            h2{
+                color: $grey-darken-4;
+            }
+
+            .btn{
+                display: flex;
+                align-items: center;
+                border-color: transparent;
+                padding-inline-start: 0;
+
+                i{
+                    color: $grey-darken-1;
+                }
+
+                &:hover{
+                    i{ color: $grey-darken-3;}
+                }
+            }
+        }
+        
+        .offcanvas-body{
+            .analytics-card{
+                flex-basis: 272px;
+                
+                @media (min-width: 1920px){
+                    flex-basis: 248px;
+                }
+
+                border-color: $grey-lighten-3;
+                background: $grey-lighten-5;
+                pointer-events: none;
+            }    
+        }
+    }
+
+    .accordion-item{
+        border: none;
+
+        .accordion-button{
+            padding: 8px 16px;
+            color: $grey-darken-1;
+            gap: 8px;
+
+            &:not(.collapsed){
+                background: transparent;
+                box-shadow: none;
+            }
+
+            &:focus{
+                border-color: transparent;
+                box-shadow: none;
+            }
+        }
+
+        .accordion-body{
+            @extend .text-button;
+            color: $teal;
+            padding: 0 40px;
+            gap: 4px;
+        }
+    }
+}
