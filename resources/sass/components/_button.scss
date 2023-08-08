@@ -1,7 +1,8 @@
 @use "../base" as *;
 @use "../utility/" as *;
 
-$border-radius: 8px;
+$border-radius-8: 8px;
+$border-radius-16: 16px;
 
 %btn-flat-base{
     display: inline-flex;
@@ -9,7 +10,7 @@ $border-radius: 8px;
     justify-content: center;
     padding: 12px 24px;
     gap: 8px;
-    border-radius: $border-radius;
+    border-radius: $border-radius-8;
 
     span{
         @extend .text-button;
@@ -73,7 +74,7 @@ $border-radius: 8px;
     @extend %flex-center;
     padding: 12px;
     background: $grey-lighten-5;
-    border-radius: $border-radius;
+    border-radius: $border-radius-8;
 
     i{
         color: $teal-darken-4;
@@ -86,4 +87,34 @@ $border-radius: 8px;
     &:active{
         background: $teal-lighten-1;
     }
+}
+
+.chip{
+    @extend %flex-center;
+    padding: 8px;
+    gap: 4px;
+    border-radius: $border-radius-16;
+    border: 1px solid transparent;
+    background: inherit;
+
+    i{
+        font-size: 16px;
+    }
+
+    &.live{
+        color: $green;
+        background: $teal-lighten-5;
+    }
+
+    &.previous{
+        color: $grey-darken-2;
+        background: $grey-lighten-3;
+    }
+
+}
+
+.chip-outline{
+    // border-radius: $border-radius-16;
+    border: 1px solid $grey-lighten-1;
+    color: $grey-darken-2;
 }
