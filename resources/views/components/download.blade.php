@@ -1,4 +1,4 @@
 <a href="{{$url}}" {{ $attributes->merge(['class' => "btn-flat-".$type]) }}>
-    <i class="ph-bold ph-download-simple"></i>
+    {{$slot}}
     <span>{{$name}}</span>
 </a>

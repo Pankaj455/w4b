@@ -12,6 +12,7 @@
         @vite(['resources/sass/app.scss'])
         <script defer src="https://unpkg.com/@phosphor-icons/web@2.0.3"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     </head>
     <body>
         <main class="overflow-hidden w-100 vh-100 d-flex">
@@ -21,15 +22,6 @@
             </div>
         </main>
 
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-
-        <script>
-            // $(document).ready(function(){
-            //     $(".nav-list").on("click", function(){
-            //         $(".nav-list.selected").removeClass("selected");
-            //         $(this).addClass("selected");
-            //     })
-            // })
-        </script>
+        @stack('scripts')
     </body>
 </html>

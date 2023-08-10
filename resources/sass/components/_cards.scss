@@ -57,13 +57,14 @@ $top-border-smooth: 8px 8px 0 0;
 
 
 .campaign-card{
-    // display: flex;
-    // flex-direction: column;
+    display: flex;
+    flex-direction: column;
     width: 368px;
     flex-basis: 368px;
     padding: 24px;
     gap: 24px;
-    border-radius: 8px 8px 0px 0px;
+    border: 1px solid transparent;
+    border-radius: $top-border-smooth;
     background: $white;
 
     .campaign-header{
@@ -92,5 +93,14 @@ $top-border-smooth: 8px 8px 0 0;
             font-style: italic;
             color: $grey-darken-1;
         }
+    }
+
+    &:hover{
+        border-bottom: $teal;
+        box-shadow: 0px 5px 20px 0px rgba(0, 150, 136, 0.25);
+    }
+
+    &:active{
+        border: 1px solid $teal;
     }
 }

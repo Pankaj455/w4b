@@ -17,7 +17,9 @@
                 <div class="messages-wrapper mb-4">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h3>Messages</h3>
-                        <x-download url="#" type="primary" name="Download" />
+                        <x-download url="#" type="primary" name="Download">
+                            <i class="ph-bold ph-download-simple"></i>
+                        </x-download>
                     </div>
                     <div class="d-flex align-items-center gap-3">
                         <x-analytics-card title="Total messages" count="9465" arrow="up" percentage="65" lastTime="from last 24hrs" />
@@ -51,7 +53,7 @@
             </div>
             <div class="tab-pane fade" id="campaign-tab-pane" role="tabpanel" aria-labelledby="campaign-tab" tabindex="0">
                 <!-- search-bar -->
-                <div class="d-flex search-section">
+                <div class="d-flex search-section mb-32">
                     <div class="search-wrapper flex-grow-1 d-flex">
                         <div class="d-flex position-relative px-3 w-100">
                             <form action="#" class="d-flex flex-grow-1 gap-2">
@@ -234,7 +236,9 @@
                     <i class="ph ph-arrow-left"></i>
                 </button>
                 <h2 class="offcanvas-title" id="offcanvasNavbarLabel">User Actions</h2>
-                <x-download url="" id="user-actions" type="primary" name="Download" class="ms-auto disabled" />
+                <x-download url="" id="user-actions" type="primary" name="Download" class="ms-auto disabled">
+                    <i class="ph-bold ph-download-simple"></i>
+                </x-download>
             </div>
             <div class="offcanvas-body">
                 <div class="accordion" id="accordionPanelsStayOpenExample">

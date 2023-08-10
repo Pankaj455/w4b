@@ -1,6 +1,25 @@
 @use "../base/" as *;
 @use "../utility/" as *;
 
-// .campaigns-wrapper{
-    
-// }
+.campaigns-wrapper{
+    .offcanvas-body{
+        .form-title{
+            color: $grey-darken-2;
+        }
+    }
+
+    .preview{
+        .disable{
+            input,
+            select{
+                pointer-events: none;
+                border: transparent;
+            }
+
+            button,
+            i{
+                display: none;
+            }
+        }
+    }
+}
