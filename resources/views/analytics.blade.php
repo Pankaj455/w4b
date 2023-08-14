@@ -68,9 +68,37 @@
                         <i class="ph-bold ph-sort-descending"></i>
                     </button>
                     
-                    <button class="button-icon">
-                        <i class="ph-bold ph-funnel"></i>
-                    </button>
+                    <div class="dropdown filter">
+                        <button class="button-icon dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                            <i class="ph-bold ph-funnel"></i>
+                        </button>
+                        <ul class="dropdown-menu py-0 overflow-hidden">
+                            <li>
+                                <div class="dropdown-item">
+                                    <label for="marketing">Marketing</label>
+                                    <input id="marketing" type="checkbox" class="d-none">
+                                    <i class="ph-bold ph-square"></i>
+                                    <i class="ph-bold ph-check-square d-none"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdown-item">
+                                    <label for="service">Service</label>
+                                    <input id="service" type="checkbox" class="d-none">
+                                    <i class="ph-bold ph-square"></i>
+                                    <i class="ph-bold ph-check-square d-none"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdown-item">
+                                    <label for="app">App Launch</label>
+                                    <input id="app" type="checkbox" class="d-none">
+                                    <i class="ph-bold ph-square"></i>
+                                    <i class="ph-bold ph-check-square d-none"></i>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="d-flex align-items-center gap-3 flex-wrap">

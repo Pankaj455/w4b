@@ -55,7 +55,6 @@ $top-border-smooth: 8px 8px 0 0;
     }
 }
 
-
 .campaign-card{
     display: flex;
     flex-direction: column;
@@ -68,10 +67,6 @@ $top-border-smooth: 8px 8px 0 0;
     background: $white;
 
     .campaign-header{
-        // display: flex;
-        // justify-content: space-between;
-        // align-items: center;
-        // align-self: stretch;
         color: $grey-darken-2;
     }
 
@@ -102,5 +97,27 @@ $top-border-smooth: 8px 8px 0 0;
 
     &:active{
         border: 1px solid $teal;
+    }
+}
+
+.message-template{
+    padding-left: 20px;
+
+    .text-body-2{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        $line-height: 18px;
+        $lines: 2;
+        height: calc($lines * $line-height);
+        text-overflow: ellipsis;
+        margin-bottom: 28px;
+        // width: 48ch;
+        // overflow-wrap: break-word;
+    }
+
+    .chip{
+        background: $grey-lighten-2;
     }
 }

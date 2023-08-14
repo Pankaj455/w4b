@@ -248,7 +248,7 @@
                     </div>
                     <p class="text-caption fst-italic grey-darken-1">Last updated on 28/12/2022</p>
                 </div>
-                <form action="" class="d-flex flex-column gap-3 disable" id="campaign-edit">
+                <form action="" class="d-flex flex-column gap-3 disable" id="form-edit">
                     <div class="input-container">
                         <input name="email" type="text" class="text-body-2" value="New year product promotion campaign" required>
                         <label>Campaign name</label>
@@ -382,29 +382,3 @@
 
     </div>
 @endsection
-
-@push("scripts")
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        $(document).ready(function() {
-            $('.clear').on('click', function() {
-                const inputElement = $(this).siblings('input');
-
-                inputElement.val('');
-                inputElement.focus();
-            });
-
-            $("#edit-btn").on("click", function(){
-                $("#campaign-edit").removeClass("disable")
-                $("#form-control-btns").removeClass("d-none")
-                $(this).addClass("d-none");
-            })
-
-            $("#upload-file-btn").on("click", function(){
-                $("#fileUpload").click();
-            })
-
-        });
-    </script>
-@endpush
