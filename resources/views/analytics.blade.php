@@ -53,7 +53,7 @@
             </div>
             <div class="tab-pane fade" id="campaign-tab-pane" role="tabpanel" aria-labelledby="campaign-tab" tabindex="0">
                 <!-- search-bar -->
-                <div class="d-flex search-section mb-32">
+                <div class="d-flex search-section position-relative mb-32">
                     <div class="search-wrapper flex-grow-1 d-flex">
                         <div class="d-flex position-relative px-3 w-100">
                             <form action="#" class="d-flex flex-grow-1 gap-2">
@@ -64,9 +64,57 @@
                             </form>
                         </div>
                     </div>
-                    <button class="button-icon">
-                        <i class="ph-bold ph-sort-descending"></i>
-                    </button>
+
+                    <div class="dropdown filter position-static">
+                        <button class="button-icon dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                            <!-- <i class="ph-bold ph-sort-descending"></i> -->
+                            <img src="/storage/images/icons/icon_sort.svg" alt="sort-filter">
+                        </button>
+                        <div class="dropdown-menu py-0 overflow-hidden">
+                            <!-- <button class="btn position-absolute end-0 top-0 px-0"><i class="ph-bold ph-x-circle grey-darken-1"></i></button> -->
+                            <ul class="sort-items p-0">
+                                <!-- sort by -->
+                                <li class="pt-4 ps-4 mb-2">
+                                    <p class="text-caption grey-lighten-1">Sort by</p>
+                                </li>
+                                <li><div class="dropdown-item">
+                                    <input type="radio" id="bydate" name="filter" class="d-none">
+                                    <label for="bydate" class="filter-btns">
+                                        <i class="ph-bold ph-check"></i>
+                                        <span class="text-caption">Date Created</span>
+                                    </label>
+                                </div></li>
+                                <li><div class="dropdown-item">
+                                    <input type="radio" id="bydatelast" name="filter" class="d-none" checked>
+                                    <label for="bydatelast" class="filter-btns">
+                                        <i class="ph-bold ph-check"></i>
+                                        <span class="text-caption">Last Modified</span>
+                                    </label>
+                                </div></li>
+
+                                <li><hr class="dropdown-divider mt-3"></li>
+
+                                <!-- order by -->
+                                <li class="ps-4 mb-2">
+                                    <p class="text-caption grey-lighten-1">Order by</p>
+                                </li>
+                                <li><div class="dropdown-item">
+                                    <input type="radio" id="older" name="filter" class="d-none">
+                                    <label for="older" class="filter-btns">
+                                        <i class="ph-bold ph-check"></i>
+                                        <span class="text-caption">Older First</span>
+                                    </label>
+                                </div></li>
+                                <li><div class="dropdown-item">
+                                    <input type="radio" id="newer" name="filter" class="d-none">
+                                    <label for="newer" class="filter-btns">
+                                        <i class="ph-bold ph-check"></i>
+                                        <span class="text-caption">Newer First</span>
+                                    </label>
+                                </div></li>
+                            </ul>
+                        </div>
+                    </div>
                     
                     <div class="dropdown filter">
                         <button class="button-icon dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">

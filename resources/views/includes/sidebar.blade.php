@@ -10,12 +10,27 @@
         <div class="flex-grow-1">
             <div class="d-flex flex-column">
                 <a href="/analytics" class="list-item nav-list {{ Request::is('analytics') ? 'selected' : '' }}">
-                    <!-- <i class="ph-bold ph-cell-signal-medium"></i> -->
+                <i class="ph-bold ph-cell-signal-medium"></i>
                     <span>Analytics</span>
                 </a>
-                <a href="/templates" class="list-item nav-list {{ Request::is('templates') ? 'selected' : '' }}">Templates</a>
-                <a href="/campaign" class="list-item nav-list {{ Request::is('campaign') ? 'selected' : '' }}">Campaign</a>
+                <a href="/templates" class="list-item nav-list {{ Request::is('templates') ? 'selected' : '' }}">
+                    @if(Request::is('templates'))
+                        <img src="/storage/images/icons/icon_templates-light.svg" alt="template-icon">
+                    @else
+                        <img src="/storage/images/icons/icon_templates.svg" alt="template-icon">
+                    @endif
+                    <span>Templates</span>
+                </a>
+                <a href="/campaign" class="list-item nav-list {{ Request::is('campaign') ? 'selected' : '' }}">
+                    @if(Request::is('campaign'))
+                        <img src="/storage/images/icons/icon_campaigns-light.svg" alt="campaign-icon">
+                    @else
+                        <img src="/storage/images/icons/icon_campaigns.svg" alt="campaign-icon">
+                    @endif
+                    <span>Campaign</span>
+                </a>
                 <a href="#" class="list-item nav-list coming-soon">
+                    <img src="/storage/images/icons/icon_flow-editor.svg" alt="flow-editor-icon">
                     <span>Flow Editor</span>
                     <span class="label">SOON</span>
                 </a>

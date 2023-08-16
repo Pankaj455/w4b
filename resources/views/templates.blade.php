@@ -47,7 +47,8 @@
                     <!-- Sort Messages -->
                     <div class="dropdown filter position-static">
                         <button class="button-icon dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                            <i class="ph-bold ph-sort-descending"></i>
+                            <!-- <i class="ph-bold ph-sort-descending"></i> -->
+                            <img src="/storage/images/icons/icon_sort.svg" alt="sort-filter">
                         </button>
                         <div class="dropdown-menu py-0 overflow-hidden">
                             <!-- <button class="btn position-absolute end-0 top-0 px-0"><i class="ph-bold ph-x-circle grey-darken-1"></i></button> -->
@@ -185,7 +186,8 @@
         <div class="template-preview col-6 position-absolute w-50 min-vh-100 top-0 end-0 vh-100 overflow-y-auto">
             <div class="position-absolute top-50 start-0 end-0 text-center">
                 <div class="w-100 d-flex flex-column default-preview">
-                    <i class="ph-bold ph-warning-circle"></i>
+                    <!-- <i class="ph-bold ph-warning-circle"></i> -->
+                    <img src="/storage/images/icons/icon_alert-box.svg" alt="alert-box" class="align-self-center">
                     <h3 class="grey-darken-1 z-1">Please select a template to preview it</h3>
                 </div>
             </div>

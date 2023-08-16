@@ -15,9 +15,12 @@
                         </form>
                     </div>
                 </div>
+
+                <!-- sort by -->
                 <div class="dropdown filter position-static">
                     <button class="button-icon dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                        <i class="ph-bold ph-sort-descending"></i>
+                        <!-- <i class="ph-bold ph-sort-descending"></i> -->
+                        <img src="/storage/images/icons/icon_sort.svg" alt="sort-filter">
                     </button>
                     <div class="dropdown-menu py-0 overflow-hidden">
                         <!-- <button class="btn position-absolute end-0 top-0 px-0"><i class="ph-bold ph-x-circle grey-darken-1"></i></button> -->
@@ -64,6 +67,8 @@
                         </ul>
                     </div>
                 </div>
+
+
                 <div class="dropdown filter">
                     <button class="button-icon dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                         <i class="ph-bold ph-funnel"></i>
