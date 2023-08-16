@@ -24,7 +24,8 @@
     label{
         @extend .text-button;
         color: $grey-darken-1;
-        pointer-events: none;
+        // pointer-events: none;
+        user-select: none;
         position: absolute;
         left: 16px;
         top: 14px;

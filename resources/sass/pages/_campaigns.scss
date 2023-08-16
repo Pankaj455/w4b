@@ -16,9 +16,66 @@
                 border: transparent;
             }
 
+            .input-file{
+                .download-link{
+                    opacity: 1 !important;
+
+                    i{
+                        display: inline;
+                    }
+                }
+
+                &, label{
+                    pointer-events: none;
+                }
+            }
             button,
             i{
                 display: none;
+            }
+        }
+    }
+
+    .dropdown{
+        .dropdown-menu{
+            top: 56px !important;
+            transform: none !important;
+            left: auto !important;
+            right: 0 !important;
+
+            .sort-items{
+                .dropdown-item{
+                    @extend .text-caption;
+                    color: $grey-darken-3;
+                    padding: 0;
+                    
+                    
+                    .filter-btns{
+                        width: 100%;
+                        position: relative;
+                        padding: 4px 24px;
+
+                        &:hover{
+                            background: $teal-darken-4;
+                            color: $white;
+                        }
+
+                        i{
+                            position: absolute;
+                            left: 6px;
+                            bottom: -4px;
+                            font-size: 24px;
+                            opacity: 0;
+                            color: $grey-darken-1;
+                            transition: all 0.2s;
+                        }
+                    }
+
+                    input:checked ~ .filter-btns i{
+                        opacity: 1;
+                    }
+                    
+                }
             }
         }
     }

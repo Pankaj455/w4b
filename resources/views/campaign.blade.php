@@ -4,7 +4,7 @@
     <div class="campaigns-wrapper">
         <h1 class="mb-32">Campaign</h1>
         <div class="d-flex justify-content-between align-items-center mb-32">
-            <div class="d-flex search-section">
+            <div class="d-flex search-section position-relative">
                 <div class="search-wrapper flex-grow-1 d-flex">
                     <div class="d-flex position-relative px-3 w-100">
                         <form action="#" class="d-flex flex-grow-1 gap-2">
@@ -15,9 +15,55 @@
                         </form>
                     </div>
                 </div>
-                <button class="button-icon">
-                    <i class="ph-bold ph-sort-descending"></i>
-                </button>
+                <div class="dropdown filter position-static">
+                    <button class="button-icon dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                        <i class="ph-bold ph-sort-descending"></i>
+                    </button>
+                    <div class="dropdown-menu py-0 overflow-hidden">
+                        <!-- <button class="btn position-absolute end-0 top-0 px-0"><i class="ph-bold ph-x-circle grey-darken-1"></i></button> -->
+                        <ul class="sort-items p-0">
+                            <!-- sort by -->
+                            <li class="pt-4 ps-4 mb-2">
+                                <p class="text-caption grey-lighten-1">Sort by</p>
+                            </li>
+                            <li><div class="dropdown-item">
+                                <input type="radio" id="bydate" name="filter" class="d-none">
+                                <label for="bydate" class="filter-btns">
+                                    <i class="ph-bold ph-check"></i>
+                                    <span class="text-caption">Date Created</span>
+                                </label>
+                            </div></li>
+                            <li><div class="dropdown-item">
+                                <input type="radio" id="bydatelast" name="filter" class="d-none" checked>
+                                <label for="bydatelast" class="filter-btns">
+                                    <i class="ph-bold ph-check"></i>
+                                    <span class="text-caption">Last Modified</span>
+                                </label>
+                            </div></li>
+
+                            <li><hr class="dropdown-divider mt-3"></li>
+
+                            <!-- order by -->
+                            <li class="ps-4 mb-2">
+                                <p class="text-caption grey-lighten-1">Order by</p>
+                            </li>
+                            <li><div class="dropdown-item">
+                                <input type="radio" id="older" name="filter" class="d-none">
+                                <label for="older" class="filter-btns">
+                                    <i class="ph-bold ph-check"></i>
+                                    <span class="text-caption">Older First</span>
+                                </label>
+                            </div></li>
+                            <li><div class="dropdown-item">
+                                <input type="radio" id="newer" name="filter" class="d-none">
+                                <label for="newer" class="filter-btns">
+                                    <i class="ph-bold ph-check"></i>
+                                    <span class="text-caption">Newer First</span>
+                                </label>
+                            </div></li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="dropdown filter">
                     <button class="button-icon dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                         <i class="ph-bold ph-funnel"></i>
@@ -84,7 +130,7 @@
                     </div>
                 </div>
             </button>
-            <button class="text-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#fathers-day" aria-controls="fathers-day">
+            <button class="text-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#camp-whatsapp" aria-controls="fathers-day">
                 <div class="campaign-card">
                     <div class="campaign-header">
                         <div class="d-flex justify-content-between align-items-center">
@@ -110,7 +156,7 @@
                     </div>
                 </div>
             </button>
-            <button class="text-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#fathers-day" aria-controls="fathers-day">
+            <button class="text-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#camp-whatsapp" aria-controls="fathers-day">
                 <div class="campaign-card">
                     <div class="campaign-header">
                         <div class="d-flex justify-content-between align-items-center">
@@ -136,7 +182,7 @@
                     </div>
                 </div>
             </button>
-            <button class="text-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#fathers-day" aria-controls="fathers-day">
+            <button class="text-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#camp-whatsapp" aria-controls="fathers-day">
                 <div class="campaign-card">
                     <div class="campaign-header">
                         <div class="d-flex justify-content-between align-items-center">
@@ -162,7 +208,7 @@
                     </div>
                 </div>
             </button>
-            <button class="text-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#fathers-day" aria-controls="fathers-day">
+            <button class="text-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#camp-whatsapp" aria-controls="fathers-day">
                 <div class="campaign-card">
                     <div class="campaign-header">
                         <div class="d-flex justify-content-between align-items-center">
@@ -188,7 +234,7 @@
                     </div>
                 </div>
             </button>
-            <button class="text-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#fathers-day" aria-controls="fathers-day">
+            <button class="text-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#camp-whatsapp" aria-controls="fathers-day">
                 <div class="campaign-card">
                     <div class="campaign-header">
                         <div class="d-flex justify-content-between align-items-center">
@@ -217,6 +263,7 @@
 
         </div>
 
+        <!-- preview drawer -->
         <div class="offcanvas offcanvas-end preview" tabindex="-1" id="camp-whatsapp" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header justify-content-between gap-3 mb-4">
                 <div class="d-flex gap-3">
@@ -277,12 +324,24 @@
                         <i class="ph-bold ph-caret-down"></i>
                     </div>
                     <!-- file upload  -->
-                    <!-- <div class="input-container">
+                    <div class="input-container">
                         <div class="flex-grow-1">
-                            <input name="file" type="file" class="text-body-2" required>
-                            <label>Upload contact file</label>
+                            <div class="input-file">
+                                <label for="fileUpload" class="input position-relative p-0 d-flex justify-content-end align-items-center gap-2">
+                                    <a href="#" class="download-link">
+                                        <i class="ph-bold ph-download-simple blue"></i>
+                                    </a>
+                                    <button class="chip previous" type="button" id="upload-file-btn">
+                                        <i class="ph-bold ph-upload-simple"></i>
+                                        <span class="text-caption">Upload File</span>
+                                    </button>
+                                </label>
+                                <input id="fileUpload" type="file" class="d-none" accept=".svg" required>
+                                <span class="top-label">Upload contact file</span>
+                                <span class="file-name position-absolute text-button blue">No file uploaded</span>
+                            </div>
                         </div>
-                    </div> -->
+                    </div>
                     <div class="input-container">
                         <div class="flex-grow-1">
                             <input name="date" type="date" class="text-body-2" required>
@@ -324,7 +383,7 @@
                     <div class="input-container">
                         <input name="email" type="text" class="text-body-2" required>
                         <label>Campaign name</label>
-                        <button type="button" class="btn btn-light btn-sm d-flex justify-content-center align-items-center position-absolute p-0 clear"><i class="ph-bold ph-x-circle"></i></button>
+                        <button type="button" class="btn btn-light btn-sm d-flex justify-content-center align-items-center position-absolute p-0 clear"><i class="ph-bold ph-x-circle"></i></button>    
                     </div>
                     <div class="input-container">
                         <div class="flex-grow-1">
@@ -352,27 +411,30 @@
                     <div class="input-container">
                         <div class="flex-grow-1">
                             <div class="input-file">
-                                <label for="fileUpload" class="input position-relative p-0">
-                                    <button class="chip previous ms-auto" type="button" id="upload-file-btn">
+                                <label for="fileUpload" class="input position-relative p-0 d-flex justify-content-end align-items-center gap-2">
+                                    <a href="#" class="opacity-0 download-link">
+                                        <i class="ph-bold ph-download-simple blue"></i>
+                                    </a>
+                                    <button class="chip previous" type="button" id="upload-file-btn">
                                         <i class="ph-bold ph-upload-simple"></i>
                                         <span class="text-caption">Upload File</span>
                                     </button>
                                 </label>
-                                <input id="fileUpload" type="file" class="d-none" required>
+                                <input id="fileUpload" type="file" class="d-none" accept=".svg" required>
                                 <span class="top-label">Upload contact file</span>
-                                <span class="file-name position-absolute text-button blue">Contact.csv</span>
+                                <span class="file-name position-absolute text-button blue">No file uploaded</span>
                             </div>
                         </div>
                     </div>
                     <div class="input-container">
                         <div class="flex-grow-1">
-                            <input name="date" type="date" class="text-body-2" required>
+                            <input id="date-picker" name="date" type="text" class="text-body-2" required>
                             <label>Date</label>
                         </div>
                     </div>
                     <div class="input-container">
                         <div class="flex-grow-1">
-                            <input name="time" type="time" class="text-body-2" required>
+                            <input class="timepicker" name="time" type="time" class="text-body-2" required>
                             <label>Time</label>
                         </div>
                     </div>
@@ -382,3 +444,41 @@
 
     </div>
 @endsection
+
+@push("scripts")
+    <script>
+        $(document).ready(function(){
+            const datepicker = $("#date-picker")
+            const currentDate = new Intl.DateTimeFormat("en-us", {
+                month: "short",
+                day: "numeric",
+                year: "numeric"
+            }).format(new Date())
+            datepicker.val(currentDate.replace(",", ""))
+
+            $("#date-picker").datepicker({
+                defaultDate: new Date(),
+                dateFormat: "M d yy",
+            });
+
+            $("#fileUpload").on("change", function(){
+                const files = $(this).get(0).files;
+                const filename = $(this).val().split("\\").pop();
+                const filenameSpan = $(".file-name")
+                const downloadLink = $(".download-link")
+                console.log(downloadLink);
+                if(filename.length === 0){
+                    filenameSpan.text("No file uploaded")
+                    if(!downloadLink.hasClass("opacity-0"))
+                        downloadLink.addClass("opacity-0")
+                }else{
+                    filenameSpan.text(filename)
+                    if(downloadLink.hasClass("opacity-0"))
+                    downloadLink.removeClass("opacity-0")
+                }
+            })
+                
+        });
+    </script>
+
+@endpush
