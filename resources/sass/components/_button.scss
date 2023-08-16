@@ -70,6 +70,24 @@ $border-radius-16: 16px;
     }
 }
 
+.btn-flat-tertiary{
+    @extend %btn-flat-base;
+    background: transparent;
+    border-radius: 8px !important;
+    
+    i,span{
+        color: $teal;
+    }
+
+    &:hover{
+        background: $grey-lighten-4;
+    }
+
+    &:active{
+        background: $grey-lighten-5;
+    }
+}
+
 .button-icon{
     @extend %flex-center;
     padding: 12px;

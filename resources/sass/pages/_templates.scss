@@ -4,7 +4,7 @@
 .templates-wrapper{
     
     .templates-list{
-        
+
         header{
             padding-top: 48px;
             padding-left: 40px;
@@ -109,16 +109,27 @@
         padding: 56px 16px;
         
         .input-group{
-            #add-variable{
-                background: transparent;
-                i,span{
-                    color: $teal;
-                }
+            .add-variable{
+                width: fit-content;
             }
 
             #message-placeholders{
                 background: $grey-lighten-4;
                 border-radius: 8px 8px 0 0;
+
+                .col-6:nth-child(2n+1){
+                    padding-right: 8px;
+                    margin-bottom: 16px;
+                }
+                .col-6:nth-child(2n){
+                    padding-left: 8px;
+                }
+
+                .col-6:last-child{
+                    opacity: 0.1;
+                    user-select: none;
+                    pointer-events: none;
+                }
 
                 select{
                     background: $grey-lighten-5;
@@ -134,10 +145,24 @@
                 border: transparent;
             }
 
+            
             button,
             i{
                 display: none;
             }
+
+            .accordion-button{
+                // .button-icon:nth-child(3),
+                // i.ph-caret-down{
+                //     display: flex;
+                // }
+                
+                .button-icon:has(i.ph-caret-down){
+                    &{ display: flex; }
+                    i.ph-caret-down{ display: flex; }
+                }
+            }
+
         }
 
         .default-preview{
@@ -146,6 +171,43 @@
             i{
                 color: $orange;
             }
+        }
+
+        .accordion-item{
+            .accordion-button{
+                padding: 0;
+                .button-icon{
+                    background: transparent;
+                    color: $teal;
+
+                    &:hover{
+                        background: $grey-lighten-4;
+                    }
+                
+                    &:active{
+                        background: $grey-lighten-5;
+                    }
+
+                    .ph-caret-down{
+                        transition: all 0.2s;
+                    }
+                }
+
+                &::after{
+                    display: none;
+                }
+
+                &[aria-expanded="true"] .button-icon .ph-caret-down{
+                    transform: rotate(180deg);
+                }
+            }
+    
+            // .accordion-body{
+            //     @extend .text-button;
+            //     color: $teal;
+            //     padding: 0 40px;
+            //     gap: 4px;
+            // }
         }
     }
 }

@@ -27,4 +27,20 @@
         }
 
     }
+
+    .accordion-item{
+
+        .accordion-button{
+            padding: 8px 16px;
+            color: $grey-darken-1;
+            gap: 8px;
+        }
+
+        .accordion-body{
+            @extend .text-button;
+            color: $teal;
+            padding: 0 40px;
+            gap: 4px;
+        }
+    }
 }

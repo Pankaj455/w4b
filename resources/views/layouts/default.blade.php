@@ -31,11 +31,19 @@
                     inputElement.focus();
                 });
 
-                $("#edit-btn").on("click", function(){
-                    $("#form-edit").removeClass("disable")
-                    $("#form-control-btns").removeClass("d-none")
-                    $("#add-variable").removeClass("d-none")
+                $(".edit-btn").on("click", function(){
+                    const parentSibling = $(this).parent().siblings("#form-edit");
+                    parentSibling.removeClass("disable")
+                    // $("#form-edit").removeClass("disable")
+                    $(this).siblings("#form-control-btns").removeClass("d-none")
+                    // $("#form-control-btns").removeClass("d-none")
+                    parentSibling.find(".add-variable").removeClass("d-none");
+                    // $("#add-variable").removeClass("d-none")
                     $(this).addClass("d-none");
+                })
+
+                $(".add-variable").on("click", function(){
+                    console.log("add new input");
                 })
 
                 $("#upload-file-btn").on("click", function(){

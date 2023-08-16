@@ -225,7 +225,7 @@
                     </button>
                     <h2 class="offcanvas-title" id="offcanvasNavbarLabel">Preview</h2>
                 </div>
-                <button class="btn-flat-primary" id="edit-btn">
+                <button class="btn-flat-primary edit-btn">
                     <i class="ph-bold ph-note-pencil"></i>
                     <span class="text-button">Edit</span>
                 </button>
