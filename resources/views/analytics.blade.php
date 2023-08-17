@@ -65,6 +65,7 @@
                         </div>
                     </div>
 
+                    <!-- sort by -->
                     <div class="dropdown filter position-static">
                         <button class="button-icon dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                             <!-- <i class="ph-bold ph-sort-descending"></i> -->
@@ -116,6 +117,7 @@
                         </div>
                     </div>
                     
+                    <!-- filters based on campaign type -->
                     <div class="dropdown filter">
                         <button class="button-icon dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                             <i class="ph-bold ph-funnel"></i>
@@ -123,135 +125,197 @@
                         <ul class="dropdown-menu py-0 overflow-hidden">
                             <li>
                                 <div class="dropdown-item">
-                                    <label for="marketing">Marketing</label>
                                     <input id="marketing" type="checkbox" class="d-none">
-                                    <i class="ph-bold ph-square"></i>
-                                    <i class="ph-bold ph-check-square d-none"></i>
+                                    <label for="marketing" class="d-flex justify-content-between">
+                                        <span>Marketing</span>
+                                        <i class="ph-bold ph-square"></i>
+                                        <i class="ph-bold ph-check-square d-none"></i>
+                                    </label>
                                 </div>
                             </li>
                             <li>
                                 <div class="dropdown-item">
-                                    <label for="service">Service</label>
                                     <input id="service" type="checkbox" class="d-none">
-                                    <i class="ph-bold ph-square"></i>
-                                    <i class="ph-bold ph-check-square d-none"></i>
+                                    <label for="service" class="d-flex justify-content-between">
+                                        <span>Service</span>
+                                        <i class="ph-bold ph-square"></i>
+                                        <i class="ph-bold ph-check-square d-none"></i>
+                                    </label>
                                 </div>
                             </li>
                             <li>
                                 <div class="dropdown-item">
-                                    <label for="app">App Launch</label>
                                     <input id="app" type="checkbox" class="d-none">
-                                    <i class="ph-bold ph-square"></i>
-                                    <i class="ph-bold ph-check-square d-none"></i>
+                                    <label for="app" class="d-flex justify-content-between">
+                                        <span>App Launch</span>
+                                        <i class="ph-bold ph-square"></i>
+                                        <i class="ph-bold ph-check-square d-none"></i>
+                                    </label>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="d-flex align-items-center gap-3 flex-wrap">
-                    <!-- campaign-cards -->
+                <div class="position-relative overflow-hidden" id="campaigns-container">
+                    <div class="d-flex align-items-center gap-3 flex-wrap position-relative" id="campaigns">
+                        <!-- campaign-cards -->
+                        
+                        <button class="campaign-card d-flex flex-column text-start">
+                            <div class="campaign-header w-100">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p class="text-caption">10:30 AM &nbsp; Jan 06 2023</p>
+                                    <div class="d-flex gap-2">
+                                        <x-chip class="chip-outline" text="Service" />
+                                        <x-chip class="chip live" text="live">
+                                            <i class="ph-bold ph-stop-circle"></i>
+                                        </x-chip>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="mb-1 campaign-name">Retargeting campaign for Whatsapp in app</h3>
+                                <p class="text-body-2">Template name</p>
+                            </div>
+                        </button>
+                        <button class="campaign-card d-flex flex-column text-start">
+                            <div class="campaign-header w-100">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p class="text-caption">12:30 PM &nbsp; Jun 18 2023</p>
+                                    <div class="d-flex gap-2">
+                                        <x-chip class="chip-outline" text="Marketing" />
+                                        <x-chip class="chip live" text="live">
+                                            <i class="ph-bold ph-stop-circle"></i>
+                                        </x-chip>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="mb-1 campaign-name">Father’s day discount offer campaign</h3>
+                                <p class="text-body-2">Product catalogue</p>
+                            </div>
+                        </button>
+                        <button class="campaign-card d-flex flex-column text-start">
+                            <div class="campaign-header w-100">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p class="text-caption">10:30 AM &nbsp; Jan 12 2023</p>
+                                    <div class="d-flex gap-2">
+                                        <x-chip class="chip-outline" text="Marketing" />
+                                        <x-chip class="chip live" text="live">
+                                            <i class="ph-bold ph-stop-circle"></i>
+                                        </x-chip>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="mb-1 campaign-name">Bonanza week special offer campaign</h3>
+                                <p class="text-body-2">Template name</p>
+                            </div>
+                        </button>
+                        <button class="campaign-card d-flex flex-column text-start">
+                            <div class="campaign-header w-100">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p class="text-caption">08:30 AM  &nbsp; Dec 30 2022</p>
+                                    <div class="d-flex gap-2">
+                                        <x-chip class="chip-outline" text="Marketing" />
+                                        <x-chip class="chip previous" text="previous">
+                                            <i class="ph-bold ph-stop-circle"></i>
+                                        </x-chip>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="mb-1 campaign-name">New year product promotion campaign </h3>
+                                <p class="text-body-2">Our products</p>
+                            </div>
+                        </button>
+                        <button class="campaign-card d-flex flex-column text-start">
+                            <div class="campaign-header w-100">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p class="text-caption">08:30 AM &nbsp; Nov 27 2022</p>
+                                    <div class="d-flex gap-2">
+                                        <x-chip class="chip-outline" text="Marketing" />
+                                        <x-chip class="chip previous" text="previous">
+                                            <i class="ph-bold ph-stop-circle"></i>
+                                        </x-chip>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="mb-1 campaign-name">Christmas product promotion campaign</h3>
+                                <p class="text-body-2">Our products</p>
+                            </div>
+                        </button>
+                        <button class="campaign-card d-flex flex-column text-start">
+                            <div class="campaign-header w-100">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p class="text-caption">10:30 AM &nbsp; Nov 27 2022</p>
+                                    <div class="d-flex gap-2">
+                                        <x-chip class="chip-outline" text="Service" />
+                                        <x-chip class="chip previous" text="previous">
+                                            <i class="ph-bold ph-stop-circle"></i>
+                                        </x-chip>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="mb-1 campaign-name">Retargeting campaign for Whatsapp in app</h3>
+                                <p class="text-body-2">Our products</p>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="campaign-overview position-absolute w-100 start-100 top-0 opacity-0 d-flex flex-column align-items-start gap-4">
+                        <button class="btn-flat-tertiary p-0 back">
+                            <i class="ph-bold ph-arrow-left"></i>
+                            <span>Back</span>
+                        </button>
+                        <header class="d-flex gap-2 flex-column">
+                            <div class="d-flex gap-3 align-items-center">
+                                <h2>Retargeting campaign for WhatsApp in app</h2>
+                                <x-chip class="chip-outline" text="Service" />
+                                <x-chip class="chip previous" text="Previous">
+                                    <i class="ph-bold ph-stop-circle"></i>
+                                </x-chip>
+                            </div>
+                            <p class="text-caption grey-darken-1">10:30 AM &nbsp; Jan 06 2023</p>
+                        </header>
 
-                    <div class="campaign-card d-flex flex-column">
-                        <div class="campaign-header">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <p class="text-caption">10:30 AM &nbsp; Jan 06 2023</p>
-                                <div class="d-flex gap-2">
-                                    <x-chip class="chip-outline" text="Service" />
-                                    <x-chip class="chip live" text="live">
-                                        <i class="ph-bold ph-stop-circle"></i>
-                                    </x-chip>
-                                </div>
+                        <div class="messages-wrapper w-100 mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h3>Messages</h3>
+                                <x-download url="#" type="primary" name="Download">
+                                    <i class="ph-bold ph-download-simple"></i>
+                                </x-download>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <x-analytics-card title="Total messages" count="9465" />
+                                <x-analytics-card title="Messages Sent" count="6265" />
+                                <x-analytics-card title="Messages Read" count="265"/>
+                                <x-analytics-card title="Messages Failed" count="5613" />
                             </div>
                         </div>
-                        <div>
-                            <h3 class="mb-1 campaign-name">Retargeting campaign for Whatsapp in app</h3>
-                            <p class="text-body-2">Template name</p>
-                        </div>
-                    </div>
-                    <div class="campaign-card d-flex flex-column">
-                        <div class="campaign-header">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <p class="text-caption">12:30 PM &nbsp; Jun 18 2023</p>
-                                <div class="d-flex gap-2">
-                                    <x-chip class="chip-outline" text="Marketing" />
-                                    <x-chip class="chip live" text="live">
-                                        <i class="ph-bold ph-stop-circle"></i>
-                                    </x-chip>
-                                </div>
+                        
+                        <div class="actions-wrapper w-100">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h3>User Actions</h3>
+                                <!-- <x-download url="" id="user-actions" type="primary" name="Download" /> -->
+                                <button class="btn-flat-primary" data-bs-toggle="offcanvas" data-bs-target="#user-actions" aria-controls="user-actions">
+                                    <i class="ph-bold ph-download-simple"></i>
+                                    <span>Download</span>
+                                </button>
                             </div>
-                        </div>
-                        <div>
-                            <h3 class="mb-1 campaign-name">Father’s day discount offer campaign</h3>
-                            <p class="text-body-2">Product catalogue</p>
-                        </div>
-                    </div>
-                    <div class="campaign-card d-flex flex-column">
-                        <div class="campaign-header">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <p class="text-caption">10:30 AM &nbsp; Jan 12 2023</p>
-                                <div class="d-flex gap-2">
-                                    <x-chip class="chip-outline" text="Marketing" />
-                                    <x-chip class="chip live" text="live">
-                                        <i class="ph-bold ph-stop-circle"></i>
-                                    </x-chip>
-                                </div>
+                            <!-- <p class="text-subtitle-2 mb-3">Menu</p> -->
+                            <div class="d-flex align-items-center gap-3">
+                                <button class="text-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#primary-cta" aria-controls="primary-cta">
+                                    <x-analytics-card title="Primary CTA" count="6780" />
+                                </button>
+                                <button class="text-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#secondary-cta" aria-controls="secondary-cta">
+                                    <x-analytics-card title="Secondary CTA" count="2200" />
+                                </button>
+                                <button class="text-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#tertiary-cta" aria-controls="tertiary-cta">
+                                    <x-analytics-card title="Tertiary CTA" count="485" />
+                                </button>
                             </div>
-                        </div>
-                        <div>
-                            <h3 class="mb-1 campaign-name">Bonanza week special offer campaign</h3>
-                            <p class="text-body-2">Template name</p>
-                        </div>
-                    </div>
-                    <div class="campaign-card d-flex flex-column">
-                        <div class="campaign-header">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <p class="text-caption">08:30 AM  &nbsp; Dec 30 2022</p>
-                                <div class="d-flex gap-2">
-                                    <x-chip class="chip-outline" text="Marketing" />
-                                    <x-chip class="chip previous" text="previous">
-                                        <i class="ph-bold ph-stop-circle"></i>
-                                    </x-chip>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="mb-1 campaign-name">New year product promotion campaign </h3>
-                            <p class="text-body-2">Our products</p>
-                        </div>
-                    </div>
-                    <div class="campaign-card d-flex flex-column">
-                        <div class="campaign-header">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <p class="text-caption">08:30 AM &nbsp; Nov 27 2022</p>
-                                <div class="d-flex gap-2">
-                                    <x-chip class="chip-outline" text="Marketing" />
-                                    <x-chip class="chip previous" text="previous">
-                                        <i class="ph-bold ph-stop-circle"></i>
-                                    </x-chip>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="mb-1 campaign-name">Christmas product promotion campaign</h3>
-                            <p class="text-body-2">Our products</p>
-                        </div>
-                    </div>
-                    <div class="campaign-card d-flex flex-column">
-                        <div class="campaign-header">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <p class="text-caption">10:30 AM &nbsp; Nov 27 2022</p>
-                                <div class="d-flex gap-2">
-                                    <x-chip class="chip-outline" text="Service" />
-                                    <x-chip class="chip previous" text="previous">
-                                        <i class="ph-bold ph-stop-circle"></i>
-                                    </x-chip>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="mb-1 campaign-name">Retargeting campaign for Whatsapp in app</h3>
-                            <p class="text-body-2">Our products</p>
                         </div>
                     </div>
                 </div>
@@ -301,6 +365,51 @@
                     <x-analytics-card title="Service Request" count="9465" arrow="up" percentage="65" lastTime="from last 24hrs" />
                     <x-analytics-card title="Call Centre" count="6151" arrow="up" percentage="0" lastTime="from last 24hrs" />
                     <x-analytics-card title="App" count="561" arrow="up" percentage="36" lastTime="from last 24hrs" />
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="primary-cta" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header justify-content-start gap-3">
+                <button type="button" class="btn" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <i class="ph ph-arrow-left"></i>
+                </button>
+                <h2 class="offcanvas-title" id="offcanvasNavbarLabel">Primary CTA</h2>
+            </div>
+            <div class="offcanvas-body">
+                <div class="d-flex align-items-center flex-wrap gap-3">
+                    <x-analytics-card title="Primary CTA" count="6780" />
+                    <x-analytics-card title="Primary outcome" count="561" />
+                    <x-analytics-card title="Conversion Percentage" count="35" />
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="secondary-cta" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header justify-content-start gap-3">
+                <button type="button" class="btn" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <i class="ph ph-arrow-left"></i>
+                </button>
+                <h2 class="offcanvas-title" id="offcanvasNavbarLabel">Secondary CTA</h2>
+            </div>
+            <div class="offcanvas-body">
+                <div class="d-flex align-items-center flex-wrap gap-3">
+                    <x-analytics-card title="Secondary CTA" count="2200" />
+                    <x-analytics-card title="Secondary outcome" count="561" />
+                    <x-analytics-card title="Conversion Percentage" count="35" />
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="tertiary-cta" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header justify-content-start gap-3">
+                <button type="button" class="btn" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <i class="ph ph-arrow-left"></i>
+                </button>
+                <h2 class="offcanvas-title" id="offcanvasNavbarLabel">Tertiary CTA</h2>
+            </div>
+            <div class="offcanvas-body">
+                <div class="d-flex align-items-center flex-wrap gap-3">
+                    <x-analytics-card title="Tertiary CTA" count="485" />
+                    <x-analytics-card title="Tertiary outcome" count="71" />
+                    <x-analytics-card title="Conversion Percentage" count="35" />
                 </div>
             </div>
         </div>
@@ -371,3 +480,21 @@
         </div>
     </div>
 @endsection
+
+@push("scripts")
+<script>
+    $(".campaign-card").on("click", function(){
+        $("#campaigns").addClass("d-none")
+        $(".search-section").addClass("d-none")
+        $("#campaigns-container").removeClass("overflow-hidden")
+        $(".campaign-overview").removeClass("opacity-0 start-100")
+    })
+
+    $(".back").on("click", function(){
+        $("#campaigns").removeClass("d-none")
+        $(".search-section").removeClass("d-none")
+        $("#campaigns-container").addClass("overflow-hidden")
+        $(".campaign-overview").addClass("opacity-0 start-100")
+    })
+</script>
+@endpush

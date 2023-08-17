@@ -1,6 +1,19 @@
 @use "../base" as *;
 @use "../utility" as *;
 
+@mixin campaign-analytics{
+    #count-wrapper{
+        padding: 20px 0;
+
+        & > *{
+            margin-bottom: 0 !important;
+        }
+
+        h1{
+            font-size: 56px;
+        }
+    }
+}
 
 .analytics-wrapper{
     h3,
@@ -85,6 +98,36 @@
                     
                 }
             }
+        }
+    }
+
+    #campaigns{
+        background: $grey-lighten-3;
+    }
+
+    .campaign-overview{
+        padding-bottom: 40px;
+        transition: all 0.5s;
+        .btn-flat-tertiary.back{
+            &:hover{
+                background: transparent;
+            }
+        }
+
+        header{
+            .chip.previous{
+                background: $grey-lighten-2;
+            }
+        }
+
+        .analytics-card{
+            @include campaign-analytics;
+        }
+    }
+
+    .offcanvas[id$="-cta"]{
+        .analytics-card{
+            @include campaign-analytics;
         }
     }
 }

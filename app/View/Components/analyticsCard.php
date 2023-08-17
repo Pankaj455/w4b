@@ -18,7 +18,7 @@ class analyticsCard extends Component
     public $percentage;
     public $lastTime;
 
-    public function __construct($title, $count, $arrow, $percentage, $lastTime)
+    public function __construct($title, $count, $arrow=null, $percentage=null, $lastTime=null)
     {
         $this->title = $title;
         $this->count = $count;
