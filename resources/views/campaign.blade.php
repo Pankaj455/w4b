@@ -73,7 +73,7 @@
                     <button class="button-icon dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                         <i class="ph-bold ph-funnel"></i>
                     </button>
-                    <ul class="dropdown-menu py-0 overflow-hidden">
+                    <ul class="dropdown-menu py-0 overflow-hidden" style="width: 210px">
                         <li>
                             <div class="dropdown-item">
                                 <input id="marketing" type="checkbox" class="d-none">
@@ -384,7 +384,8 @@
                         <i class="ph-bold ph-x-circle"></i>
                     </x-download>
                     <x-download url="#" id="save" type="primary" name="Save" class="ms-auto">
-                        <i class="ph-bold ph-download-simple"></i>
+                        <!-- <i class="ph-bold ph-download-simple"></i> -->
+                        <img src="/storage/images/icons/icon_save.svg" alt="save-icon">
                     </x-download>
                 </div>
             </div>

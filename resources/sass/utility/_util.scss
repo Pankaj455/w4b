@@ -191,6 +191,15 @@
                 border-color: transparent;
                 box-shadow: none;
             }
+
+        }
+        input:is(:checked){
+            & ~ label i.ph-square{
+                display: none;
+            }
+            & ~ label i.ph-check-square{
+                display: inline !important;
+            }
         }
     }
 

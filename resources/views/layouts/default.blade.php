@@ -49,10 +49,6 @@
                     $(this).addClass("d-none");
                 })
 
-                $(".add-variable").on("click", function(){
-                    console.log("add new input");
-                })
-
                 $("#upload-file-btn").on("click", function(){
                     $("#fileUpload").click();
                 })

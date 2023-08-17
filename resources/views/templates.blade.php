@@ -204,7 +204,8 @@
                                 <i class="ph-bold ph-x-circle"></i>
                             </x-download>
                             <x-download url="#" id="save" type="primary" name="Save" class="ms-auto">
-                                <i class="ph-bold ph-download-simple"></i>
+                                <!-- <i class="ph-bold ph-download-simple"></i> -->
+                                <img src="/storage/images/icons/icon_save.svg" alt="save-icon">
                             </x-download>
                         </div>
                     </div>
@@ -288,7 +289,8 @@
                                 <i class="ph-bold ph-x-circle"></i>
                             </x-download>
                             <x-download url="#" id="save" type="primary" name="Save" class="ms-auto">
-                                <i class="ph-bold ph-download-simple"></i>
+                                <!-- <i class="ph-bold ph-download-simple"></i> -->
+                                <img src="/storage/images/icons/icon_save.svg" alt="save-icon">
                             </x-download>
                         </div>
                     </div>
@@ -374,7 +376,8 @@
                                 <i class="ph-bold ph-x-circle"></i>
                             </x-download>
                             <x-download url="#" id="save" type="primary" name="Save" class="ms-auto">
-                                <i class="ph-bold ph-download-simple"></i>
+                                <!-- <i class="ph-bold ph-download-simple"></i> -->
+                                <img src="/storage/images/icons/icon_save.svg" alt="save-icon">
                             </x-download>
                         </div>
                     </div>
@@ -498,7 +501,8 @@
                                 <i class="ph-bold ph-x-circle"></i>
                             </x-download>
                             <x-download url="#" id="save" type="primary" name="Save" class="ms-auto">
-                                <i class="ph-bold ph-download-simple"></i>
+                                <!-- <i class="ph-bold ph-download-simple"></i> -->
+                                <img src="/storage/images/icons/icon_save.svg" alt="save-icon">
                             </x-download>
                         </div>
                     </div>

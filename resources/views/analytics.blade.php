@@ -122,7 +122,7 @@
                         <button class="button-icon dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                             <i class="ph-bold ph-funnel"></i>
                         </button>
-                        <ul class="dropdown-menu py-0 overflow-hidden">
+                        <ul class="dropdown-menu py-0 overflow-hidden" style="width: 210px">
                             <li>
                                 <div class="dropdown-item">
                                     <input id="marketing" type="checkbox" class="d-none">
@@ -299,7 +299,7 @@
                             <div class="d-flex justify-content-between align-items-center mb-4">
                                 <h3>User Actions</h3>
                                 <!-- <x-download url="" id="user-actions" type="primary" name="Download" /> -->
-                                <button class="btn-flat-primary" data-bs-toggle="offcanvas" data-bs-target="#user-actions" aria-controls="user-actions">
+                                <button class="btn-flat-primary" data-bs-toggle="offcanvas" data-bs-target="#campaign-user-actions" aria-controls="user-actions">
                                     <i class="ph-bold ph-download-simple"></i>
                                     <span>Download</span>
                                 </button>
@@ -368,6 +368,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- drawer for campaign-overview -->
         <div class="offcanvas offcanvas-end" tabindex="-1" id="primary-cta" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header justify-content-start gap-3">
                 <button type="button" class="btn" data-bs-dismiss="offcanvas" aria-label="Close">
@@ -421,7 +423,7 @@
                     <i class="ph ph-arrow-left"></i>
                 </button>
                 <h2 class="offcanvas-title" id="offcanvasNavbarLabel">User Actions</h2>
-                <x-download url="" id="user-actions" type="primary" name="Download" class="ms-auto disabled">
+                <x-download url="" id="user-actions" type="primary" name="Download" class="ms-auto disabled user-actions">
                     <i class="ph-bold ph-download-simple"></i>
                 </x-download>
             </div>
@@ -430,23 +432,39 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                                <input type="checkbox" id="products-offers">
-                                <label for="products-offers">Product and Offers</label>
+                                <input type="checkbox" class="d-none header-checkbox columns" id="products-offers">
+                                <label for="products-offers" class="d-flex gap-2 align-items-center">
+                                    <i class="ph-bold ph-check-square d-none"></i>
+                                    <i class="ph-bold ph-square"></i>
+                                    <span>Product and Offers</span>
+                                </label>
                             </button>
                         </h2>
                         <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
                             <div class="accordion-body d-flex flex-column">
                                 <div class="d-flex py-2 gap-2">
-                                    <input type="checkbox" id="products">
-                                    <label for="products">Purchase Product</label>
+                                    <input type="checkbox" class="d-none columns" id="products">
+                                    <label for="products" class="d-flex gap-2 align-items-center">
+                                        <i class="ph-bold ph-check-square d-none"></i>
+                                        <i class="ph-bold ph-square"></i>
+                                        <span>Purchase Product</span>
+                                    </label>
                                 </div>
                                 <div class="d-flex py-2 gap-2">
-                                    <input type="checkbox" id="discounts">
-                                    <label for="discounts">Offers/Discounts</label>
+                                    <input type="checkbox" class="d-none columns" id="discounts">
+                                    <label for="discounts" class="d-flex gap-2 align-items-center">
+                                        <i class="ph-bold ph-check-square d-none"></i>
+                                        <i class="ph-bold ph-square"></i>
+                                        <span>Offers/Discounts</span>
+                                    </label>
                                 </div>
                                 <div class="d-flex py-2 gap-2">
-                                    <input type="checkbox" id="catalogue">
-                                    <label for="catalogue">Product Catalogue</label>
+                                    <input type="checkbox" class="d-none columns" id="catalogue">
+                                    <label for="catalogue" class="d-flex gap-2 align-items-center">
+                                        <i class="ph-bold ph-check-square d-none"></i>
+                                        <i class="ph-bold ph-square"></i>
+                                        <span>Product Catalogue</span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -454,8 +472,12 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                                <input type="checkbox" id="locate-store">
-                                <label for="locate-store">Locate Store</label>
+                                <input type="checkbox" class="d-none header-checkbox columns" id="locate-stores">
+                                <label for="locate-stores" class="d-flex gap-2 align-items-center">
+                                    <i class="ph-bold ph-check-square d-none"></i>
+                                    <i class="ph-bold ph-square"></i>
+                                    <span>Locate Store</span>
+                                </label>
                             </button>
                         </h2>
                         <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
@@ -466,8 +488,100 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="panelsStayOpen-headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                                <input type="checkbox" id="support">
-                                <label for="support">Support</label>
+                                <input type="checkbox" class="d-none header-checkbox columns" id="support-menu">
+                                <label for="support-menu" class="d-flex gap-2 align-items-center">
+                                    <i class="ph-bold ph-check-square d-none"></i>
+                                    <i class="ph-bold ph-square"></i>
+                                    <span>Support</span>
+                                </label>
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                            <div class="accordion-body d-flex flex-column">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="campaign-user-actions" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header justify-content-start gap-3 mb-4">
+                <button type="button" class="btn" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <i class="ph ph-arrow-left"></i>
+                </button>
+                <h2 class="offcanvas-title" id="offcanvasNavbarLabel">User Actions</h2>
+                <x-download url="" id="user-actions" type="primary" name="Download" class="ms-auto disabled user-actions">
+                    <i class="ph-bold ph-download-simple"></i>
+                </x-download>
+            </div>
+            <div class="offcanvas-body">
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                <input type="checkbox" class="d-none header-checkbox columns" id="cta-primary">
+                                <label for="cta-primary" class="d-flex gap-2 align-items-center">
+                                    <i class="ph-bold ph-check-square d-none"></i>
+                                    <i class="ph-bold ph-square"></i>
+                                    <span>Primary CTA</span>
+                                </label>
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                            <div class="accordion-body d-flex flex-column">
+                                <div class="d-flex py-2 gap-2">
+                                    <input type="checkbox" class="d-none columns" id="cta">
+                                    <label for="cta" class="d-flex gap-2 align-items-center">
+                                        <i class="ph-bold ph-check-square d-none"></i>
+                                        <i class="ph-bold ph-square"></i>
+                                        <span>Primary CTA</span>
+                                    </label>
+                                </div>
+                                <div class="d-flex py-2 gap-2">
+                                    <input type="checkbox" class="d-none columns" id="outcome">
+                                    <label for="outcome" class="d-flex gap-2 align-items-center">
+                                        <i class="ph-bold ph-check-square d-none"></i>
+                                        <i class="ph-bold ph-square"></i>
+                                        <span>Primary Outcome</span>
+                                    </label>
+                                </div>
+                                <div class="d-flex py-2 gap-2">
+                                    <input type="checkbox" class="d-none columns" id="conversion">
+                                    <label for="conversion" class="d-flex gap-2 align-items-center">
+                                        <i class="ph-bold ph-check-square d-none"></i>
+                                        <i class="ph-bold ph-square"></i>
+                                        <span>Conversion Percentage</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                <input type="checkbox" class="d-none header-checkbox columns" id="cta-secondary">
+                                <label for="cta-secondary" class="d-flex gap-2 align-items-center">
+                                    <i class="ph-bold ph-check-square d-none"></i>
+                                    <i class="ph-bold ph-square"></i>
+                                    <span>Secondary CTA</span>
+                                </label>
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                            <div class="accordion-body d-flex flex-column">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                <input type="checkbox" class="d-none header-checkbox columns" id="cta-tertiary">
+                                <label for="cta-tertiary" class="d-flex gap-2 align-items-center">
+                                    <i class="ph-bold ph-check-square d-none"></i>
+                                    <i class="ph-bold ph-square"></i>
+                                    <span>Tertiary CTA</span>
+                                </label>
                             </button>
                         </h2>
                         <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
@@ -496,5 +610,21 @@
         $("#campaigns-container").addClass("overflow-hidden")
         $(".campaign-overview").addClass("opacity-0 start-100")
     })
+
+    $(".header-checkbox").on("change", function() {
+        const isChecked = $(this).prop("checked");
+        $(this).closest(".accordion-item").find(".columns").prop("checked", isChecked);
+    });
+
+    $(".columns").on("change", function(){
+        const anyChecked = $(".columns:checked").length > 0;
+        const downloadBtn = $('a.user-actions');
+        if(anyChecked){
+            downloadBtn.removeClass("disabled")
+        }else{
+            downloadBtn.addClass("disabled")
+        }
+    })
+
 </script>
 @endpush
