@@ -2,7 +2,17 @@
 @extends("layouts.default")
 @section("content")
     <div class="analytics-wrapper">
-        <h1 class="mb-3">Platform Analytics</h1>
+        <div class="d-flex justify-content-between align-items-center">
+            <h1 class="mb-3">Platform Analytics</h1>
+            <div class="d-flex align-items-center gap-3" id="date-picker">
+                <x-chip class="previous" text="Last month" id="report-label" />
+                <div id="report-range" class="p-3 d-flex align-items-center justify-content-center gap-3">
+                    <img src="/storage/images/icons/icon_calendar.svg" alt="calendar-icon">
+                    <span class="text-body-1 grey-darken-1"></span>
+                    <i class="ph-fill ph-caret-down"></i>
+                </div>
+            </div>
+        </div>
 
         <ul class="nav nav-tabs gap-3" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
@@ -597,34 +607,64 @@
 
 @push("scripts")
 <script>
-    $(".campaign-card").on("click", function(){
-        $("#campaigns").addClass("d-none")
-        $(".search-section").addClass("d-none")
-        $("#campaigns-container").removeClass("overflow-hidden")
-        $(".campaign-overview").removeClass("opacity-0 start-100")
-    })
+    $(function() {
 
-    $(".back").on("click", function(){
-        $("#campaigns").removeClass("d-none")
-        $(".search-section").removeClass("d-none")
-        $("#campaigns-container").addClass("overflow-hidden")
-        $(".campaign-overview").addClass("opacity-0 start-100")
-    })
+        $(".campaign-card").on("click", function(){
+            $("#campaigns").addClass("d-none")
+            $(".search-section").addClass("d-none")
+            $("#campaigns-container").removeClass("overflow-hidden")
+            $(".campaign-overview").removeClass("opacity-0 start-100")
+        })
 
-    $(".header-checkbox").on("change", function() {
-        const isChecked = $(this).prop("checked");
-        $(this).closest(".accordion-item").find(".columns").prop("checked", isChecked);
-    });
+        $(".back").on("click", function(){
+            $("#campaigns").removeClass("d-none")
+            $(".search-section").removeClass("d-none")
+            $("#campaigns-container").addClass("overflow-hidden")
+            $(".campaign-overview").addClass("opacity-0 start-100")
+        })
 
-    $(".columns").on("change", function(){
-        const anyChecked = $(".columns:checked").length > 0;
-        const downloadBtn = $('a.user-actions');
-        if(anyChecked){
-            downloadBtn.removeClass("disabled")
-        }else{
-            downloadBtn.addClass("disabled")
+        $(".header-checkbox").on("change", function() {
+            const isChecked = $(this).prop("checked");
+            $(this).closest(".accordion-item").find(".columns").prop("checked", isChecked);
+        });
+
+        $(".columns").on("change", function(){
+            const anyChecked = $(".columns:checked").length > 0;
+            const downloadBtn = $('a.user-actions');
+            if(anyChecked){
+                downloadBtn.removeClass("disabled")
+            }else{
+                downloadBtn.addClass("disabled")
+            }
+        })
+
+
+        const start = moment().subtract(29, "days");
+        const end = moment();
+        const label = "Last month";
+
+        function cb(start, end, label) {
+            $("#report-range span").html(start.format("D MMM") + " - " + end.format("D MMM YYYY"));
+            $("#report-label span").text(label);
         }
-    })
+
+        $("#report-range").daterangepicker({
+            startDate: start,
+            endDate: end,
+            locale: { customRangeLabel: "Custom" },
+            ranges: {
+            "Today": [moment(), moment()],
+            "Yesterday": [moment().subtract(1, "days"), moment().subtract(1, "days")],
+            "Last 7 Days": [moment().subtract(6, "days"), moment()],
+            "Last 30 Days": [moment().subtract(29, "days"), moment()],
+            "This Month": [moment().startOf("month"), moment()],
+            "Last Month": [moment().subtract(1, "month").startOf("month"), moment().subtract(1, "month").endOf("month")]
+            }
+        }, cb);
+
+        cb(start, end, label);
+        
+    });
 
 </script>
 @endpush

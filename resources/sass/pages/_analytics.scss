@@ -130,4 +130,22 @@
             @include campaign-analytics;
         }
     }
+
+    #date-picker{
+
+        .chip{
+            background: $grey-lighten-2;
+            color: $grey-darken-3;
+        }
+
+        #report-range{
+            cursor: pointer;
+            border-bottom: 1px solid $grey-darken-1;
+
+            .ph-caret-down{
+                font-size: 15px;
+                color: $grey-darken-1;
+            }
+        }
+    }
 }
