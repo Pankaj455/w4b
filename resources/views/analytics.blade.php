@@ -508,6 +508,30 @@
                         </h2>
                         <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
                             <div class="accordion-body d-flex flex-column">
+                            <div class="d-flex py-2 gap-2">
+                                    <input type="checkbox" class="d-none columns" id="service-req">
+                                    <label for="service-req" class="d-flex gap-2 align-items-center">
+                                        <i class="ph-bold ph-check-square d-none"></i>
+                                        <i class="ph-bold ph-square"></i>
+                                        <span>Service Request</span>
+                                    </label>
+                                </div>
+                                <div class="d-flex py-2 gap-2">
+                                    <input type="checkbox" class="d-none columns" id="call">
+                                    <label for="call" class="d-flex gap-2 align-items-center">
+                                        <i class="ph-bold ph-check-square d-none"></i>
+                                        <i class="ph-bold ph-square"></i>
+                                        <span>Call Centre</span>
+                                    </label>
+                                </div>
+                                <div class="d-flex py-2 gap-2">
+                                    <input type="checkbox" class="d-none columns" id="apps">
+                                    <label for="apps" class="d-flex gap-2 align-items-center">
+                                        <i class="ph-bold ph-check-square d-none"></i>
+                                        <i class="ph-bold ph-square"></i>
+                                        <span>App</span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>

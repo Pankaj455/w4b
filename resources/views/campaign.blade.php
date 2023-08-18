@@ -342,7 +342,7 @@
                                     <a href="#" class="download-link">
                                         <i class="ph-bold ph-download-simple blue"></i>
                                     </a>
-                                    <button class="chip previous" type="button" id="upload-file-btn">
+                                    <button class="chip previous upload-file-btn" type="button">
                                         <i class="ph-bold ph-upload-simple"></i>
                                         <span class="text-caption">Upload File</span>
                                     </button>
@@ -355,20 +355,21 @@
                     </div>
                     <div class="input-container">
                         <div class="flex-grow-1">
-                            <input name="date" type="date" class="text-body-2" required>
+                            <input name="date" type="text" class="text-body-2" required>
                             <label>Date</label>
                         </div>
+                        <i class="ph-bold ph-caret-down"></i>
                     </div>
                     <div class="input-container">
                         <div class="flex-grow-1">
-                            <input name="time" type="time" class="text-body-2" required>
+                            <input name="time" type="text" class="timepicker text-body-2" value="5:08 PM" required>
                             <label>Time</label>
                         </div>
+                        <i class="ph-bold ph-caret-down"></i>
                     </div>
                 </form>
             </div>
         </div>
-
 
         <!-- new-campaign-drawer  -->
         <div class="offcanvas offcanvas-end" tabindex="-1" id="create-campaign" aria-labelledby="offcanvasNavbarLabel">
@@ -427,7 +428,7 @@
                                     <a href="#" class="opacity-0 download-link">
                                         <i class="ph-bold ph-download-simple blue"></i>
                                     </a>
-                                    <button class="chip previous" type="button" id="upload-file-btn">
+                                    <button class="chip previous upload-file-btn" type="button">
                                         <i class="ph-bold ph-upload-simple"></i>
                                         <span class="text-caption">Upload File</span>
                                     </button>
@@ -440,15 +441,17 @@
                     </div>
                     <div class="input-container">
                         <div class="flex-grow-1">
-                            <input id="date-picker" name="date" type="text" class="text-body-2" required>
+                            <input name="date" type="text" class="text-body-2" required>
                             <label>Date</label>
                         </div>
+                        <i class="ph-bold ph-caret-down"></i>
                     </div>
                     <div class="input-container">
                         <div class="flex-grow-1">
-                            <input class="timepicker" name="time" type="time" class="text-body-2" required>
+                            <input name="time" type="text" class="timepicker text-body-2" required>
                             <label>Time</label>
                         </div>
+                        <i class="ph-bold ph-caret-down"></i>
                     </div>
                 </form>
             </div>
@@ -460,25 +463,22 @@
 @push("scripts")
     <script>
         $(document).ready(function(){
-            const datepicker = $("#date-picker")
-            const currentDate = new Intl.DateTimeFormat("en-us", {
-                month: "short",
-                day: "numeric",
-                year: "numeric"
-            }).format(new Date())
-            datepicker.val(currentDate.replace(",", ""))
-
-            $("#date-picker").datepicker({
-                defaultDate: new Date(),
-                dateFormat: "M d yy",
+            const datePicker = $("input[name='date']")
+            datePicker.daterangepicker({
+                singleDatePicker: true,
+                autoApply: true,
+                drops: "auto",
+                locale: {
+                    format: "D MMM YYYY"
+                },
             });
 
             $("#fileUpload").on("change", function(){
-                const files = $(this).get(0).files;
+                // const files = $(this).get(0).files;
                 const filename = $(this).val().split("\\").pop();
                 const filenameSpan = $(".file-name")
                 const downloadLink = $(".download-link")
-                console.log(downloadLink);
+                // console.log(downloadLink);
                 if(filename.length === 0){
                     filenameSpan.text("No file uploaded")
                     if(!downloadLink.hasClass("opacity-0"))
@@ -486,7 +486,30 @@
                 }else{
                     filenameSpan.text(filename)
                     if(downloadLink.hasClass("opacity-0"))
-                    downloadLink.removeClass("opacity-0")
+                        downloadLink.removeClass("opacity-0")
+                }
+            })
+
+            const filename = $("#fileUpload").val().split("\\").pop();
+            console.log("filename -> ", filename);
+            if(!filename || !filename.length === 0){
+                $(".download-link").addClass("opacity-0");
+            }else{
+                $(".download-link").removeClass("opacity-0");
+                console.log("removing opacity-0");
+            }
+
+            $(".timepicker").datetimepicker({
+                format: "h:mm A",
+                icons: {
+                    up: "fas fa-chevron-up",
+                    down: "fas fa-chevron-down",
+                    previous: "fas fa-chevron-left",
+                    next: "fas fa-chevron-right"
+                    // up: "ph-bold ph-caret-up",
+                    // down: "ph-bold ph-caret-down",
+                    // previous: "ph-bold ph-caret-left",
+                    // next: "ph-bold ph-caret-right"
                 }
             })
                 

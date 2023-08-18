@@ -17,8 +17,9 @@
             }
 
             .input-file{
+                border-bottom-color: transparent;
                 .download-link{
-                    opacity: 1 !important;
+                    // opacity: 1 !important;
 
                     i{
                         display: inline;
