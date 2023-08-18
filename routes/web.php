@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route("analytics");
 });
 
 Route::get('/login', function () {
@@ -31,7 +31,7 @@ Route::get('/thank-you', function () {
 
 Route::get("/analytics", function(){
     return view("analytics");
-});
+})->name("analytics");
 
 Route::get("/templates", function(){
     return view("templates");
