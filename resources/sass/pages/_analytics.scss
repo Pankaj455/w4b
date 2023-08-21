@@ -41,6 +41,12 @@
 
     }
 
+    .tab-content{
+        .tab-pane:first-child{
+            padding-bottom: 48px;
+        }
+    }
+
     .accordion-item{
 
         .accordion-button{
@@ -99,6 +105,10 @@
                 }
             }
         }
+    }
+
+    #campaigns-container{
+        min-height: 70vh;
     }
 
     #campaigns{

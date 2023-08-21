@@ -3,7 +3,7 @@
 @section("content")
     <div class="campaigns-wrapper">
         <h1 class="mb-32">Campaign</h1>
-        <div class="d-flex justify-content-between align-items-center mb-32">
+        <div class="d-flex flex-column flex-lg-row justify-content-between align-items-start align-items-lg-center mb-32 gap-3">
             <div class="d-flex search-section position-relative">
                 <div class="search-wrapper flex-grow-1 d-flex">
                     <div class="d-flex position-relative px-3 w-100">
@@ -109,11 +109,11 @@
             </div>
             <button class="btn-flat-primary" data-bs-toggle="offcanvas" data-bs-target="#create-campaign" aria-controls="create-campaign">
                 <i class="ph-bold ph-plus-circle"></i>
-                <span>Create new campaign</span>
+                <span class="d-inline d-lg-none d-xl-inline">Create new campaign</span>
             </button>
         </div>
 
-        <div class="d-flex align-items-center gap-3 flex-wrap">
+        <div class="d-flex align-items-center gap-3 flex-wrap align-content-start" style="min-height: 75vh;">
             <!-- campaign-cards -->
             <button class="text-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#camp-whatsapp" aria-controls="camp-whatsapp">
                 <div class="campaign-card">

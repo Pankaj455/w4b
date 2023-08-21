@@ -361,9 +361,12 @@
                         <div class="input-group d-flex flex-column gap-3 mb-5">
                             <h3 class="grey-lighten-1 mb-3">Media</h3>
                             <div class="input-container">
-                                <input name="url" type="text" value="https://unsplash.com/nature.png" required>
+                                <input name="media-url" type="text" value="https://unsplash.com/nature.png" required>
                                 <label>URL</label>
                                 <button type="button" class="btn btn-light btn-sm d-flex justify-content-center align-items-center position-absolute p-0 clear"><i class="ph-bold ph-x-circle"></i></button>
+                            </div>
+                            <div class="media-preview">
+                                <img src="/storage/images/ac-media.png" alt="media-preview">
                             </div>
                         </div>
                     </form>
@@ -757,3 +760,14 @@
         </div>
     </div>
 @endsection
+
+
+@push("scripts")
+    <script>
+        $("input[name='media-url']").on("change", function(){
+            const url = $(this).val();
+            console.log(url);
+            $(this).parent().siblings(".media-preview").find("img").attr("src", url);
+        })
+    </script>
+@endpush

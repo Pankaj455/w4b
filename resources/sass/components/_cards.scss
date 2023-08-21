@@ -5,9 +5,10 @@ $top-border-smooth: 8px 8px 0 0;
 
 .analytics-card{
     max-width: 272px;
+    width: 272px;
     display: flex;
     flex-direction: column;
-    width: 272px;
+    flex-basis: 272px;
     justify-content: center;
     gap: 8px;
     padding: 16px;

@@ -2,13 +2,13 @@
 @extends("layouts.default")
 @section("content")
     <div class="analytics-wrapper">
-        <div class="d-flex justify-content-between align-items-center">
-            <h1 class="mb-3">Platform Analytics</h1>
+        <div class="d-flex flex-column flex-xl-row justify-content-between align-items-start align-items-xl-center mb-3">
+            <h1>Platform Analytics</h1>
             <div class="d-flex align-items-center gap-3" id="date-picker">
                 <x-chip class="previous" text="Last month" id="report-label" />
                 <div id="report-range" class="p-3 d-flex align-items-center justify-content-center gap-3">
                     <img src="/storage/images/icons/icon_calendar.svg" alt="calendar-icon">
-                    <span class="text-body-1 grey-darken-1"></span>
+                    <input type="text" name="date-range" class="text-body-1 grey-darken-1 bg-transparent pe-none"></input>
                     <i class="ph-fill ph-caret-down"></i>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                             <i class="ph-bold ph-download-simple"></i>
                         </x-download>
                     </div>
-                    <div class="d-flex align-items-center gap-3">
+                    <div class="d-flex align-items-center gap-3 flex-wrap">
                         <x-analytics-card title="Total messages" count="9465" arrow="up" percentage="65" lastTime="from last 24hrs" />
                         <x-analytics-card title="Messages Sent" count="6265" arrow="up" percentage="45" lastTime="from last 24hrs" />
                         <x-analytics-card title="Messages Read" count="265" arrow="down" percentage="6" lastTime="from last 24hrs" />
@@ -48,7 +48,7 @@
                         </button>
                     </div>
                     <p class="text-subtitle-2 mb-3">Menu</p>
-                    <div class="d-flex align-items-center gap-3">
+                    <div class="d-flex align-items-center gap-3 flex-wrap">
                         <button class="text-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#products-and-offers" aria-controls="products-and-offers">
                             <x-analytics-card title="Product and Offers" count="9465" arrow="up" percentage="65" lastTime="from last 24hrs" />
                         </button>
@@ -297,7 +297,7 @@
                                     <i class="ph-bold ph-download-simple"></i>
                                 </x-download>
                             </div>
-                            <div class="d-flex align-items-center gap-3">
+                            <div class="d-flex align-items-center gap-3 flex-wrap">
                                 <x-analytics-card title="Total messages" count="9465" />
                                 <x-analytics-card title="Messages Sent" count="6265" />
                                 <x-analytics-card title="Messages Read" count="265"/>
@@ -315,7 +315,7 @@
                                 </button>
                             </div>
                             <!-- <p class="text-subtitle-2 mb-3">Menu</p> -->
-                            <div class="d-flex align-items-center gap-3">
+                            <div class="d-flex align-items-center gap-3 flex-wrap">
                                 <button class="text-start" type="button" data-bs-toggle="offcanvas" data-bs-target="#primary-cta" aria-controls="primary-cta">
                                     <x-analytics-card title="Primary CTA" count="6780" />
                                 </button>
@@ -639,6 +639,7 @@
         $(".campaign-card").on("click", function(){
             $("#campaigns").addClass("d-none")
             $(".search-section").addClass("d-none")
+            $(".page-navigation").addClass("d-none")
             $("#campaigns-container").removeClass("overflow-hidden")
             $(".campaign-overview").removeClass("opacity-0 start-100")
         })
@@ -646,6 +647,7 @@
         $(".back").on("click", function(){
             $("#campaigns").removeClass("d-none")
             $(".search-section").removeClass("d-none")
+            $(".page-navigation").removeClass("d-none")
             $("#campaigns-container").addClass("overflow-hidden")
             $(".campaign-overview").addClass("opacity-0 start-100")
         })
@@ -671,7 +673,7 @@
         const label = "Last month";
 
         function cb(start, end, label) {
-            $("#report-range span").html(start.format("D MMM") + " - " + end.format("D MMM YYYY"));
+            $("#report-range input").val(start.format("D MMM") + " - " + end.format("D MMM YYYY"));
             $("#report-label span").text(label);
         }
 
