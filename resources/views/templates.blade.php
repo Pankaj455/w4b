@@ -18,10 +18,10 @@
                     </div>
 
                     <!-- filters -->
-
                     <div class="dropdown filter position-static">
                         <button class="button-icon dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                            <i class="ph-bold ph-article"></i>
+                            <!-- <i class="ph-bold ph-article"></i> -->
+                            <img src="/storage/images/icons/icon_templates-dark.svg" alt="filter-btn">
                         </button>
                         <div class="dropdown-menu py-0 overflow-hidden start-0">
                             <!-- <button class="btn position-absolute end-0 top-0 px-0"><i class="ph-bold ph-x-circle grey-darken-1"></i></button> -->
@@ -182,6 +182,10 @@
                     </button>
                 </li>
             </ul>
+            
+            <!-- pagination -->
+            @include("includes.pagination")
+
         </div>
         <div class="template-preview col-6 position-absolute w-50 min-vh-100 top-0 end-0 vh-100 overflow-y-auto">
             <div class="position-absolute top-50 start-0 end-0 text-center">
@@ -225,7 +229,7 @@
                                 <i class="ph-bold ph-plus-circle"></i>
                                 <span class="text-button">Add Variable</span>
                             </button>
-                            <div class="row gx-0 px-3 pt-3" id="message-placeholders">
+                            <div class="row gx-0 px-3 pt-3 message-placeholders">
                                 <div class="col-6">
                                     <div class="input-container">
                                         <div class="flex-grow-1">
@@ -234,7 +238,7 @@
                                                 <option value="name" selected>Name</option>
                                                 <option value="url">Url</option>
                                             </select>
-                                            <label>Variable &#123;&#123;{{1}}&#125;&#125;</label>
+                                            <label>Variable &#123;&#123;<span>1</span>&#125;&#125;</label>
                                         </div>
                                         <i class="ph-bold ph-caret-down"></i>
                                     </div>
@@ -247,7 +251,7 @@
                                                 <option value="name" selected>Name</option>
                                                 <option value="url">Url</option>
                                             </select>
-                                            <label>Variable &#123;&#123;{{2}}&#125;&#125;</label>
+                                            <label>Variable &#123;&#123;<span>2</span>&#125;&#125;</label>
                                         </div>
                                         <i class="ph-bold ph-caret-down"></i>
                                     </div>
@@ -305,7 +309,7 @@
                                 <i class="ph-bold ph-plus-circle"></i>
                                 <span class="text-button">Add Variable</span>
                             </button>
-                            <div class="row gx-0 px-3 pt-3" id="message-placeholders">
+                            <div class="row gx-0 px-3 pt-3 message-placeholders">
                                 <div class="col-6">
                                     <div class="input-container">
                                         <div class="flex-grow-1">
@@ -314,7 +318,7 @@
                                                 <option value="name" selected>Name</option>
                                                 <option value="url">Url</option>
                                             </select>
-                                            <label>Variable &#123;&#123;{{1}}&#125;&#125;</label>
+                                            <label>Variable &#123;&#123;<span>1</span>&#125;&#125;</label>
                                         </div>
                                         <i class="ph-bold ph-caret-down"></i>
                                     </div>
@@ -327,7 +331,7 @@
                                                 <option value="name">Name</option>
                                                 <option value="url">Url</option>
                                             </select>
-                                            <label>Variable &#123;&#123;{{2}}&#125;&#125;</label>
+                                            <label>Variable &#123;&#123;<span>2</span>&#125;&#125;</label>
                                         </div>
                                         <i class="ph-bold ph-caret-down"></i>
                                     </div>
@@ -397,7 +401,7 @@
                                 <i class="ph-bold ph-plus-circle"></i>
                                 <span class="text-button">Add Variable</span>
                             </button>
-                            <div class="row gx-0 px-3 pt-3" id="message-placeholders">
+                            <div class="row gx-0 px-3 pt-3 message-placeholders" >
                                 <div class="col-6">
                                     <div class="input-container">
                                         <div class="flex-grow-1">
@@ -406,7 +410,7 @@
                                                 <option value="name" selected>Name</option>
                                                 <option value="url">Url</option>
                                             </select>
-                                            <label>Variable &#123;&#123;{{1}}&#125;&#125;</label>
+                                            <label>Variable &#123;&#123;<span>1</span>&#125;&#125;</label>
                                         </div>
                                         <i class="ph-bold ph-caret-down"></i>
                                     </div>
@@ -419,7 +423,7 @@
                                                 <option value="name" selected>Name</option>
                                                 <option value="url">Url</option>
                                             </select>
-                                            <label>Variable &#123;&#123;{{1}}&#125;&#125;</label>
+                                            <label>Variable &#123;&#123;<span>2</span>&#125;&#125;</label>
                                         </div>
                                         <i class="ph-bold ph-caret-down"></i>
                                     </div>
@@ -522,7 +526,7 @@
                                 <i class="ph-bold ph-plus-circle"></i>
                                 <span class="text-button">Add Variable</span>
                             </button>
-                            <div class="row gx-0 px-3 pt-3" id="message-placeholders">
+                            <div class="row gx-0 px-3 pt-3 message-placeholders">
                                 <div class="col-6">
                                     <div class="input-container">
                                         <div class="flex-grow-1">
@@ -531,7 +535,7 @@
                                                 <option value="name" selected>Name</option>
                                                 <option value="url">Url</option>
                                             </select>
-                                            <label>Variable &#123;&#123;{{1}}&#125;&#125;</label>
+                                            <label>Variable &#123;&#123;<span>1</span>&#125;&#125;</label>
                                         </div>
                                         <i class="ph-bold ph-caret-down"></i>
                                     </div>
@@ -544,7 +548,7 @@
                                                 <option value="name" selected>Name</option>
                                                 <option value="url">Url</option>
                                             </select>
-                                            <label>Variable &#123;&#123;{{1}}&#125;&#125;</label>
+                                            <label>Variable &#123;&#123;<span>2</span>&#125;&#125;</label>
                                         </div>
                                         <i class="ph-bold ph-caret-down"></i>
                                     </div>

@@ -271,8 +271,10 @@
                     </div>
                 </div>
             </button>
-
         </div>
+
+        <!-- pagination -->
+        @include("includes.pagination")
 
         <!-- preview drawer -->
         <div class="offcanvas offcanvas-end preview" tabindex="-1" id="camp-whatsapp" aria-labelledby="offcanvasNavbarLabel">

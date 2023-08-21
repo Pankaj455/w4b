@@ -329,6 +329,9 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- pagination -->
+                @include("includes.pagination")
             </div>
         </div>
 

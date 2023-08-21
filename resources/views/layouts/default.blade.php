@@ -53,12 +53,23 @@
                     $("#fileUpload").click();
                 })
 
+                $(".add-variable").on("click", function(){
+                    const messagePlaceholders = $(this).siblings(".message-placeholders");
+                    const placeholders = messagePlaceholders.find(".col-6");
+                    const numberOfPlaceholders = placeholders.length;
+                    const cloned = $(".message-placeholders .col-6").clone();
+                    cloned.find("label span").text(numberOfPlaceholders + 1)
+                    messagePlaceholders.append(cloned[0])
+                    
+
+                })
+
             });
         </script>
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
         @stack('scripts')
     </body>
