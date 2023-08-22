@@ -102,31 +102,10 @@
     padding: 48px 40px 0 40px;
     position: relative;
     overflow-y: auto;
-    // overflow: hidden;
 
     h1{
         color: $grey-darken-3;
     }
-
-    // .nav-tabs{
-    //     border: 0;
-    //     margin-bottom: 32px;
-
-    //     .nav-link{
-    //         @extend .text-subtitle-1;
-    //         color: $grey-lighten-1;
-    //         padding: 8px 0;
-    //         border: 0;
-    //     }
-
-    //     .nav-item.show .nav-link,
-    //     .nav-link.active{
-    //         color: $grey-darken-2;
-    //         background: transparent;
-    //         border-bottom: 2px solid $teal;
-    //     }
-
-    // }
 
     .offcanvas{
         padding: 64px 16px;
