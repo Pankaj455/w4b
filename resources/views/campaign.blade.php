@@ -493,7 +493,7 @@
             })
 
             const filename = $("#fileUpload").val().split("\\").pop();
-            console.log("filename -> ", filename);
+            // console.log("filename -> ", filename);
             if(!filename || !filename.length === 0){
                 $(".download-link").addClass("opacity-0");
             }else{

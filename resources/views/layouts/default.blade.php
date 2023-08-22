@@ -65,10 +65,34 @@
                 })
 
                 $(".page-item").on("click", function(){
-                    console.log($(this).hasClass("active"));
+                    // console.log($(this).hasClass("active"));
                     if(!$(this).hasClass("active")){
                         $(".page-item.active").removeClass("active");
                         $(this).addClass("active");
+                    }
+                })
+
+                $(".nav-arrow").on("click", function(){
+                    const totalPages = 3;
+                    let currentPage = parseInt($(".page-item.active .page-link").text()) - 1;
+                    // console.log(currentPage);
+                    const siblings = $(".page-item.active").siblings(".page-item")
+                    if($(this).hasClass("previous")){
+                        if(currentPage > 0){
+                            // console.log("previous");
+                            // console.log("current page updated -> ", currentPage);
+                            currentPage--;
+                            $(".page-item.active").removeClass("active");
+                            $('.page-item:eq(' + currentPage + ')').addClass("active");
+                        }
+                    }else{
+                        if(currentPage + 1 < totalPages){
+                            // console.log("next");
+                            // console.log("current page updated -> ", currentPage);
+                            currentPage++;
+                            $(".page-item.active").removeClass("active");
+                            $('.page-item:eq(' + currentPage + ')').addClass("active");
+                        }
                     }
                 })
 
