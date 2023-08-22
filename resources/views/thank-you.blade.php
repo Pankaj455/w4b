@@ -16,7 +16,7 @@
             </p>
         </div>
         
-        <a href="#" class="auth-submit w-100 mb-0 text-center">Continue to dashboard</a>
+        <a href="/analytics" class="auth-submit w-100 mb-0 text-center">Continue to dashboard</a>
 
     </div>
 
