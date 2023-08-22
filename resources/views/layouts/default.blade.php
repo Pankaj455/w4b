@@ -75,24 +75,16 @@
                 $(".nav-arrow").on("click", function(){
                     const totalPages = 3;
                     let currentPage = parseInt($(".page-item.active .page-link").text()) - 1;
-                    // console.log(currentPage);
-                    const siblings = $(".page-item.active").siblings(".page-item")
-                    if($(this).hasClass("previous")){
-                        if(currentPage > 0){
-                            // console.log("previous");
-                            // console.log("current page updated -> ", currentPage);
-                            currentPage--;
-                            $(".page-item.active").removeClass("active");
-                            $('.page-item:eq(' + currentPage + ')').addClass("active");
+
+                    if(currentPage >= 0 && currentPage < totalPages){
+                        if($(this).hasClass("previous")){
+                            if(currentPage > 0) currentPage--;
+                        } 
+                        else{
+                            if(currentPage + 1 < totalPages)    currentPage++;
                         }
-                    }else{
-                        if(currentPage + 1 < totalPages){
-                            // console.log("next");
-                            // console.log("current page updated -> ", currentPage);
-                            currentPage++;
-                            $(".page-item.active").removeClass("active");
-                            $('.page-item:eq(' + currentPage + ')').addClass("active");
-                        }
+                        $(".page-item.active").removeClass("active");
+                        $(`.page-item:eq(${currentPage})`).addClass("active");
                     }
                 })
 

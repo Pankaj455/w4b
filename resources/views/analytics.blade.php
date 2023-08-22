@@ -8,7 +8,8 @@
                 <x-chip class="previous" text="Last month" id="report-label" />
                 <div id="report-range" class="p-3 d-flex align-items-center justify-content-center gap-3">
                     <img src="/storage/images/icons/icon_calendar.svg" alt="calendar-icon">
-                    <input type="text" name="date-range" class="text-body-1 grey-darken-1 bg-transparent pe-none"></input>
+                    <!-- <input type="text" name="date-range" class="text-body-1 grey-darken-1 bg-transparent pe-none"></input> -->
+                    <span class="text-body-1 grey-darken-1"></span>
                     <i class="ph-fill ph-caret-down"></i>
                 </div>
             </div>
@@ -673,7 +674,7 @@
         const label = "Last month";
 
         function cb(start, end, label) {
-            $("#report-range input").val(start.format("D MMM") + " - " + end.format("D MMM YYYY"));
+            $("#report-range span").text(start.format("D MMM") + " - " + end.format("D MMM YYYY"));
             $("#report-label span").text(label);
         }
 
