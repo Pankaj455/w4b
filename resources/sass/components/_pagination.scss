@@ -13,20 +13,29 @@
     .pagination{
         margin-bottom: 0;
     }
-
-    .page-item:first-child .page-link{
+    
+    .previous .page-link{
+        border-radius: 4px;
         margin-right: 45px;
     }
-    .page-item:last-child .page-link{
+    .next .page-link{
+        border-radius: 4px;
         margin-left: 45px;
     }
 
     .page-link{
         background: transparent;
-        border: transparent;
+        border: 2px solid transparent;
         border-radius: 4px;
         padding: 8px 13px;
         color: $grey-lighten-1;
+
+        &:active{
+            border: 2px solid $grey-darken-1;
+        }
+        &:focus{
+            box-shadow: none;
+        }
     }
     
     .active > .page-link{

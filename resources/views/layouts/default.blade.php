@@ -64,6 +64,14 @@
 
                 })
 
+                $(".page-item").on("click", function(){
+                    console.log($(this).hasClass("active"));
+                    if(!$(this).hasClass("active")){
+                        $(".page-item.active").removeClass("active");
+                        $(this).addClass("active");
+                    }
+                })
+
             });
         </script>
 
